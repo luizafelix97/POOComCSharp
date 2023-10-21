@@ -11,14 +11,20 @@ public class Veiculo // Abstração que é a representação de um objeto real
 
     public virtual  void combustivelUsado()
     {
-         Console.WriteLine("Retorna o combustivel usado");
     }
 
 }
 
+public class Carro : Veiculo
+{
+    public override void combustivelUsado(){
+        Console.WriteLine("Gasolina");
+    }
+}
+
 public class Caminhao : Veiculo //Conceito de herança, aqui está herdando da classe Veiculo
 {
-    public virtual  void combustivelUsado() //Polimorfismo a alteracao de um metodo herdado da classe pai
+    public override void combustivelUsado() //Polimorfismo a alteracao de um metodo herdado da classe pai
     {
           Console.WriteLine("Diesel");
     }
@@ -28,5 +34,8 @@ public static void Main()
 {
     Caminhao caminhao = new Caminhao();
     caminhao.combustivelUsado();
+    
+    Carro carro = new Carro();
+    carro.combustivelUsado();
 }
 }
